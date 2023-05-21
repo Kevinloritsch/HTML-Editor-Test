@@ -77,36 +77,36 @@
     check1 = document.getElementById("check1")
     check2 = document.getElementById("check2")
     check3 = document.getElementById("check3")
-    check3 = document.getElementById("check4")
-    check3 = document.getElementById("check5")
-    check3 = document.getElementById("check6")
-    check3 = document.getElementById("check7")
-    check3 = document.getElementById("check8")
+    check4 = document.getElementById("check4")
+    check5 = document.getElementById("check5")
+    check6 = document.getElementById("check6")
+    check7 = document.getElementById("check7")
+    check8 = document.getElementById("check8")
 
 
     div1 = document.getElementById("div1")
     div2 = document.getElementById("div2")
     div3 = document.getElementById("div3")
-    div3 = document.getElementById("div4")
-    div3 = document.getElementById("div5")
-    div3 = document.getElementById("div6")
-    div3 = document.getElementById("div7")
-    div3 = document.getElementById("div8")
+    div4 = document.getElementById("div4")
+    div5 = document.getElementById("div5")
+    div6 = document.getElementById("div6")
+    div7 = document.getElementById("div7")
+    div8 = document.getElementById("div8")
 
 
     p1 = document.getElementById("p1")
     p2 = document.getElementById("p2")
     p3 = document.getElementById("p3")   
-    p3 = document.getElementById("p4")   
-    p3 = document.getElementById("p5")   
-    p3 = document.getElementById("p6")   
-    p3 = document.getElementById("p7")   
-    p3 = document.getElementById("p8")   
+    p4 = document.getElementById("p4")   
+    p5 = document.getElementById("p5")   
+    p6 = document.getElementById("p6")   
+    p7 = document.getElementById("p7")   
+    p8 = document.getElementById("p8")   
 
 
-    let checkArr = [check1, check2, check3]
-    let divArr = [div1, div2, div3]
-    let pArr = [p1, p2, p3]
+    let checkArr = [check1, check2, check3, check4, check5, check6, check7, check8]
+    let divArr = [div1, div2, div3, div4, div5, div6, div7, div8]
+    let pArr = [p1, p2, p3, p4, p5, p6, p7, p8]
 
 
     function changeContent() {
@@ -157,6 +157,7 @@
                 }
             }  
         }
+        boldChoice.checked = false
     }
 
     function changeUnderline() {
@@ -205,9 +206,6 @@
             console.log(remove.substring(0, toRemove))
             console.log(toUse)
         }
-
-        finalProduct = document.getElementById("finalProduct")
-        finalProduct.style.display = "block";
 
         download.checked = false
     }
