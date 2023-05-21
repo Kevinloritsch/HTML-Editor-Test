@@ -1,0 +1,215 @@
+<style>
+    table, th, td {
+      border:1px solid black;
+    }
+</style>
+
+
+<!-- <div style="height: 25px; background-color: black; width: 100%"> -->
+    <table id="table">
+        <tr>
+            <th>Content</th>
+            <th>Color</th>
+            <th>Font Size</th>
+            <th>Bold</th>
+            <th>Underline</th>
+            <th>View Code</th>
+        </tr>
+        <tr>
+            <th><input type="text" id="wordChoice" onkeyup="changeContent()"></th>
+            <th><input type="color" id="colorChoice" oninput="changeColor()"></th>
+            <th><input type="number" id="fontChoice" min="1" max="999" onchange="changeFont()" onkeyup="changeFont()"></th>
+            <th><input type="checkbox" id="boldChoice" onclick="changeBold()"></th>
+            <th><input type="checkbox" id="underlineChoice" onclick="changeUnderline()"></th>
+            <th><input type="checkbox" id="download" onclick="printFinal()"></th>
+
+        </tr>
+    </table>
+    
+    
+<!-- </div> -->
+<br>
+
+
+
+<input type="checkbox" id="check1">
+<p style="display: inline-block; color: rgb(0, 0, 0)"    id="div1">Div 1</p><br>
+
+<input type="checkbox" id="check2">
+<p style="display: inline-block; color: rgb(0, 0, 0)"    id="div2">Div 2</p><br>
+
+<input type="checkbox" id="check3">
+<p style="display: inline-block; color: rgb(0, 0, 0)"    id="div3">Div 3</p><br>
+
+<input type="checkbox" id="check4">
+<p style="display: inline-block; color: rgb(0, 0, 0)"    id="div4">Div 4</p><br>
+
+<input type="checkbox" id="check5">
+<p style="display: inline-block; color: rgb(0, 0, 0)"    id="div5">Div 5</p><br>
+
+<input type="checkbox" id="check6">
+<p style="display: inline-block; color: rgb(0, 0, 0)"    id="div6">Div 6</p><br>
+
+<input type="checkbox" id="check7">
+<p style="display: inline-block; color: rgb(0, 0, 0)"    id="div7">Div 7</p><br>
+
+<input type="checkbox" id="check8">
+<p style="display: inline-block; color: rgb(0, 0, 0)"    id="div8">Div 8</p><br>
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+<xmp id="p1"></xmp>
+<xmp id="p2"></xmp>
+<xmp id="p3"></xmp>
+<xmp id="p4"></xmp>
+<xmp id="p5"></xmp>
+<xmp id="p6"></xmp>
+<xmp id="p7"></xmp>
+<xmp id="p8"></xmp>
+
+
+<script>
+
+    check1 = document.getElementById("check1")
+    check2 = document.getElementById("check2")
+    check3 = document.getElementById("check3")
+    check3 = document.getElementById("check4")
+    check3 = document.getElementById("check5")
+    check3 = document.getElementById("check6")
+    check3 = document.getElementById("check7")
+    check3 = document.getElementById("check8")
+
+
+    div1 = document.getElementById("div1")
+    div2 = document.getElementById("div2")
+    div3 = document.getElementById("div3")
+    div3 = document.getElementById("div4")
+    div3 = document.getElementById("div5")
+    div3 = document.getElementById("div6")
+    div3 = document.getElementById("div7")
+    div3 = document.getElementById("div8")
+
+
+    p1 = document.getElementById("p1")
+    p2 = document.getElementById("p2")
+    p3 = document.getElementById("p3")   
+    p3 = document.getElementById("p4")   
+    p3 = document.getElementById("p5")   
+    p3 = document.getElementById("p6")   
+    p3 = document.getElementById("p7")   
+    p3 = document.getElementById("p8")   
+
+
+    let checkArr = [check1, check2, check3]
+    let divArr = [div1, div2, div3]
+    let pArr = [p1, p2, p3]
+
+
+    function changeContent() {
+        for(let i=0; i < checkArr.length; i++)
+        {
+            if(checkArr[i].checked == true)
+            {
+                var words = document.getElementById("wordChoice").value;
+                divArr[i].innerHTML = words
+            }  
+        }
+    }
+
+    function changeColor() {
+        for(let i=0; i < checkArr.length; i++)
+        {
+            if(checkArr[i].checked == true)
+            {
+                var color = document.getElementById("colorChoice").value;
+                divArr[i].style.color = color
+            }  
+        }
+    }
+
+    function changeFont() {
+        for(let i=0; i < checkArr.length; i++)
+        {
+            if(checkArr[i].checked == true)
+            {
+                var font = document.getElementById("fontChoice").value;
+                divArr[i].style.fontSize = font
+            }  
+        }
+    }
+
+    function changeBold() {
+        for(let i=0; i < checkArr.length; i++)
+        {
+            if(checkArr[i].checked == true)
+            {
+                if(divArr[i].style.fontWeight == '900')
+                {
+                    divArr[i].style.fontWeight = 100
+                }
+                else
+                {
+                    divArr[i].style.fontWeight = 900
+                }
+            }  
+        }
+    }
+
+    function changeUnderline() {
+        for(let i=0; i < checkArr.length; i++)
+        {
+            if(checkArr[i].checked == true)
+            {
+                console.log(checkArr[i].style.textDecoration)
+                if(divArr[i].style.textDecoration == "underline")
+                {
+                    divArr[i].style.textDecoration = "none"
+                }
+                else
+                {
+                    divArr[i].style.textDecoration = "underline"
+                }
+            }  
+        }
+        underlineChoice.checked = false
+    }
+
+    function preview() {
+        let table = document.getElementById("table")
+        for(let i=0; i < checkArr.length; i++)
+        {
+            if(checkArr[i].style.visibility == "hidden")
+            {
+                checkArr[i].style.visibility = "visible"
+            }
+            else
+            {
+                checkArr[i].style.visibility == "hidden"
+            }
+        }
+    }
+
+    function printFinal() {
+
+        for(let i = 0; i < divArr.length; i++)
+        {
+            let remove = divArr[i].outerHTML
+            let toRemove = remove.indexOf(`style="display:inline-block;"`)
+            toUse = `<p style="` + remove.substring(toRemove + 34)
+            pArr[i].innerHTML = toUse
+            console.log(divArr[i].outerHTML)
+            console.log(remove.substring(0, toRemove))
+            console.log(toUse)
+        }
+
+        finalProduct = document.getElementById("finalProduct")
+        finalProduct.style.display = "block";
+
+        download.checked = false
+    }
+
+</script>
